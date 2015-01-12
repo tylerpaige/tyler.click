@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+  <style>
+  html, body{
+    height: 100%;
+  }
+  body{
+    background: whitesmoke;
+    font-family: Georgia, serif;
+    font-style: italic;
+    transition: all 5s ease;
+    -webkit-transition: all 5s ease;
+  }
+  #container{
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  h1{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 42pt;
+    text-align: center;
+    transition: all 2s ease;
+    -webkit-transition: all 2s ease;
+  }
+  a{
+    text-decoration:none;
+  }
+  </style>
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    function getRand(min, max) {
+      var rand = Math.floor(Math.random() * (max - min) + min);
+      return rand;
+    };
+    var text = document.getElementById('title'),
+        body = document.getElementsByTagName('body')[0];
+
+    var changeShadow = window.setInterval(function() {
+      var val = getRand(-100, 100) + 'px ' + getRand(-100, 100) + 'px ' + getRand(0, 100) + 'px rgba(0,0,0,.5)';
+      text.style.textShadow = val;
+    }, 1000);
+
+    var changeBg = window.setInterval(function() {
+      var val = 'rgb('+getRand(107, 147)+', '+getRand(107, 147)+', '+getRand(107, 147)+')';
+      body.style.background = val;
+    }, 5000);
+  });
+</script>
+</head>
+<body>
+  <div id="container">
+    <h1 id="title"><a href="space.html">TCP</a></h1>
+  </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "tyler.click",
+  "version": "0.0.1",
+  "description": "a place for all Tyler Paige's web projects and experiments to live",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylerpaige/projects"
+  },
+  "author": "Tyler Paige",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tylerpaige/projects/issues"
+  },
+  "homepage": "https://github.com/tylerpaige/projects",
+  "dependencies": {
+    "express": "^4.10.7"
+  }
+}
