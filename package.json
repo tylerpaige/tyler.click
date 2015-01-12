@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tylerpaige/projects",
   "dependencies": {
+    "consolidate": "^0.10.0",
     "express": "^4.10.7"
   }
 }
