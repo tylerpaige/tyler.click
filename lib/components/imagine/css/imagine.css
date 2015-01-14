@@ -1,0 +1,130 @@
+/* line 4, ../sass/imagine.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 5, ../sass/imagine.scss */
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+/* line 7, ../sass/imagine.scss */
+#container {
+  font-size: 2.3rem;
+  line-height: 1.5em;
+}
+
+/* line 11, ../sass/imagine.scss */
+.slide {
+  background: whitesmoke;
+}
+
+/* line 15, ../sass/imagine.scss */
+.slide:not(.text) > .content > * {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 25%;
+}
+
+/* line 21, ../sass/imagine.scss */
+.recent {
+  box-shadow: 0px 0px 150px rgba(0, 0, 0, 0.5);
+}
+
+/* line 26, ../sass/imagine.scss */
+h1 {
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* line 29, ../sass/imagine.scss */
+#origin {
+  text-align: center;
+}
+
+/* line 32, ../sass/imagine.scss */
+p {
+  transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
+}
+
+/* line 36, ../sass/imagine.scss */
+.next {
+  width: 70px;
+  height: 30px;
+  margin: auto;
+  margin-top: 50px;
+  border: 2px solid black;
+  font-size: 3.0rem;
+  line-height: 2.7rem;
+  animation-duration: 1s;
+  -webkit-animation-duration: .75s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+  animation-name: 'press';
+  -webkit-animation-name: 'press';
+}
+
+@keyframes 'press' {
+  /* line 54, ../sass/imagine.scss */
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  /* line 57, ../sass/imagine.scss */
+  100% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@-webkit-keyframes 'press' {
+  /* line 62, ../sass/imagine.scss */
+  0% {
+    -webkit-transform: translate(7px, 7px);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
+  }
+
+  /* line 67, ../sass/imagine.scss */
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* line 75, ../sass/imagine.scss */
+.slideLeft, .slideRight {
+  z-index: 900;
+  animation-name: fade;
+  -webkit-animation-name: fade;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  visibility: visible !important;
+}
+
+@keyframes fade {
+  /* line 91, ../sass/imagine.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 94, ../sass/imagine.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  /* line 100, ../sass/imagine.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 103, ../sass/imagine.scss */
+  100% {
+    opacity: 1;
+  }
+}

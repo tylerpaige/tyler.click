@@ -1,6 +1,14 @@
 [
   {
+    "url" : "/oneforthepriceoftwo",
+    "dir" : "/jasper"
+  },
+  {
     "url" : "/imagine",
-    "res" : "imagine"
+    "dir" : "/imagine"
+  },
+  {
+    "url" : "/beep",
+    "dir" : "/beep"
   }
 ]

@@ -1,6 +1,5 @@
 var express = require('express');
 var app = express();
-var cons = require('consolidate');
 var routes = require('./routes');
 var handlers = require('./handlers');
 
@@ -8,12 +7,20 @@ var handlers = require('./handlers');
 app.set('views', './views');
 app.set('view engine', 'jade');
 
-//Path config
+//The public folder is available for all routes
 app.use(express.static(__dirname + '/public'))
 
+//routes.json contains the URLs to be access and the functions to respond
 for(var i = 0; i < routes.length; i++) {
   var cur = routes[i];
-  app.get(cur.url, handlers[cur.res]);
+  if(cur.dir != undefined) {
+  //Routes with a 'dir' property serve static files
+  //for now, these static files are in /lib/components
+    app.use(cur.url, express.static(__dirname + '/lib/components' + cur.dir))
+  } else if(cur.svc != undefined) {
+  //Routes with a 'svc' property have their own services
+    app.get(cur.url, handlers[cur.svc]);
+  }
 }
 
 //Init

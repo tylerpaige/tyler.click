@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- You know, this is all kind of about speculation too. It's just not me that's doing it, it's the news (that's kind of important too). Or rather, they're not speculating. They're telling true stories through the language of speculation
+
+The transparency piece is like this too. Airy speculation and wondering brought down by heaviness-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../assets/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="../assets/css/powerppt.min.css" />
+<link rel="stylesheet" type="text/css" href="css/imagine.css" />
+<script src="../assets/js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="../assets/js/powerppt.js" type="text/javascript"></script>
+<script>
+$(function() {
+    $('#container').powerPPT({
+        bgignore:true
+    });
+
+    function getRand(min, max) {
+            var rand = Math.floor(Math.random() * (max - min) + min);
+            return rand;
+        };
+    var text = $('#container').find('p'),
+        d = 0, //degrees
+        t = 1, //radius
+        b = 5, //blur factor
+        change;
+
+    var initShadow = $(window).on('keydown', function(e) {
+      if(e.keyCode == 39){
+        change = window.setInterval(function() {
+          var r = d*(Math.PI/180),
+              x = t*Math.cos(r),
+              y = t*Math.sin(r),
+              z = getRand(0, 100),
+              val = x+'px ' + y+'px ' + b+'px rgba(0,0,0,.5)';
+          $(text).css('text-shadow', val);
+          d+=5;
+          t+=.5;
+          if(d>=360){
+            d = 0;
+            b += 5;
+          }
+        }, 300);
+        initShadow.off('keydown');
+      }
+    });
+});
+</script>
+</head>
+<body>
+	<div id="container">
+	    <div id="origin" class="slide">
+	        <div class="content">
+	            <div class="center">
+	                <h1>If This Is Winning, Just<br/>Imagine Losing!</h1>
+	                <div class="next">&rarr;</div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- Start the show! -->
+	    <div class="slide">
+	      <div class="content">
+	        <p>A key purpose for memory isn't to just remember the past, but to be able to imagine the future.</p>
+	      </div>
+	    </div>
+	    <div class="slide">
+	        <div class="content">
+	            <p><img src="images/dollar.jpg" alt="" /></p>
+	        </div>
+	    </div>
+
+	    <!-- TECH DREAMS BELOW HERE -->
+
+	    <div class="slide">
+	        <div class="content">
+	            <p>Imagine all the artwork:</p>
+	        </div>
+	    </div>
+
+        <div class="slide">
+            <div class="content">
+                <p>Imagine if the walls of your house could talk—and tell you things like who keeps forgetting to turn off the hallway lights, or how many times has your family eaten dinner together in the last month?</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine downloading the blueprint to your custom home on the Internet. When you're ready to build, just hit print.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p><img src="images/printer.jpg" /></p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine the world's most complicated mechanical cuckoo bird — hidden not in a clock but in what appears to be a double-barreled pistol.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine what it will look like in another 20.</p>
+            </div>
+        </div>
+
+        <!-- HUMAN INTEREST BELOW HERE -->
+<!--
+        <div class="slide">
+            <div class="content">
+                <p>Imagine How Creativity Works.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine a blind Vietnam veteran skiing down the slopes for the first time.</p>
+            </div>
+        </div>-->
+        <div class="slide">
+            <div class="content">
+                <p>Imagine if President Barack Obama and hunky big-screen superstar Brad Pitt had a friendly telephone chat, and the normally frosty president was reduced to giggles and blushes. That is kind of what happened.</p>
+            </div>
+        </div>
+        <div class="slide"> <!-- touches on combining heaviness with airy "imaginations" -->
+            <div class="content">
+                <p>Imagine wearing three sweaters while eating a cold dinner with the lights turned off.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine being introduced to a pig and watching the fuzzy young pig frolic and roll around in the dirt on a farm. Now, imagine eating that pig in a sandwich.</p>
+            </div>
+        </div>
+<!--        <div class="slide">
+            <div class="content">
+                <p>Imagine liking your commute!</p>
+            </div>
+        </div>-->
+        <div class="slide">
+            <div class="content">
+                <p><img src="images/smile.png"</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine Ireland.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine Your Korea.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine what happens when you hire somebody in 24 hours.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p><img src="images/hire.jpg"/></p>
+            </div>
+        </div>
+
+        <!-- FINANCE BELOW HERE-->
+
+        <div class="slide">
+            <div class="content">
+                <p>Try to imagine health care without technology. No MRIs, X-rays or even stethoscopes</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine an economy that has double dipped since 2008, only clawing its way out of Technical Recession II thanks to a massive global sporting event that won't be back for a lifetime. Then imagine that same economy is one of the most indebted on Earth, in both public and private terms.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p><img src="images/knicks.jpg" /></p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine, just for the sake of argument, that the U.S. could, at some point in the future, lose its top-ranked credit rating.</p>
+            </div>
+        </div>
+        <div class="slide">
+          <div class="content">
+            <p>Imagine having no banking relationship whatsoever – no bank account, no credit card, no debit card.</p>
+          </div>
+        </div>
+
+        <!-- POLITICS BELOW HERE -->
+
+        <div class="slide">
+            <div class="content">
+                <p>Imagine the Tweets during the Cuban Missile Crisis.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine a city in China where pollution has been effectively stamped out.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine Water's Future</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p><img src="images/blushes.jpg"/></p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine that Saddam Hussein was still in power and our 2003 invasion never occurred. The main regional counterweight to Iran would still be in place.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine how much it costs to build those tunnels and buy rockets.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine there's a list somewhere that contains every single webpage you have visited in the last five years.</p>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Now imagine two.</p>
+            </div>
+        </div>
+
+        <!-- End it -->
+
+        <div class="slide">
+            <div class="content">
+                <p>The Most Important Risk Is the Hardest to Imagine.</p> <!-- could come last-->
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <p>Imagine Greener Pastures.</p>
+            </div>
+        </div>
+        <div id="end" class="slide">
+            <div class="content">
+                <p><img src="images/rift.jpg" alt="" /></p>
+            </div>
+        </div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+@keyframes 'press' {
+  /* line 11, ../sass/jasper.scss */
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  /* line 14, ../sass/jasper.scss */
+  50% {
+    transform: translate(20px, 20px);
+  }
+
+  /* line 17, ../sass/jasper.scss */
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes 'press' {
+  /* line 22, ../sass/jasper.scss */
+  0% {
+    -webkit-transform: translate(0px, 0px);
+  }
+
+  /* line 25, ../sass/jasper.scss */
+  50% {
+    -webkit-transform: translate(7px, 7px);
+  }
+
+  /* line 28, ../sass/jasper.scss */
+  100% {
+    -webkit-transform: translate(0px, 0px);
+  }
+}
+
+@keyframes 'swipe' {
+  /* line 33, ../sass/jasper.scss */
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  /* line 36, ../sass/jasper.scss */
+  25% {
+    transform: translate(-10px, 0px);
+  }
+
+  /* line 39, ../sass/jasper.scss */
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes 'swipe' {
+  /* line 44, ../sass/jasper.scss */
+  0% {
+    -webkit-transform: translate(0px, 0px);
+  }
+
+  /* line 47, ../sass/jasper.scss */
+  25% {
+    -webkit-transform: translate(-50px, 0px);
+  }
+
+  /* line 50, ../sass/jasper.scss */
+  100% {
+    -webkit-transform: translate(0px, 0px);
+  }
+}
+
+/* line 55, ../sass/jasper.scss */
+.center {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* line 59, ../sass/jasper.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 62, ../sass/jasper.scss */
+html {
+  font-size: 62.5;
+}
+
+/* line 65, ../sass/jasper.scss */
+body {
+  background-color: lightblue;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1.7em;
+}
+
+/* line 71, ../sass/jasper.scss */
+h6 {
+  font-size: 1.0rem;
+}
+
+/* line 75, ../sass/jasper.scss */
+#origin {
+  text-align: center;
+  background: lightblue;
+}
+/* line 80, ../sass/jasper.scss */
+#origin > .content > .center img {
+  box-shadow: 30px 30px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+/* line 84, ../sass/jasper.scss */
+#origin > .content > .center h2 {
+  font-style: italic;
+}
+
+/* line 90, ../sass/jasper.scss */
+.next {
+  width: 70px;
+  height: 44px;
+  margin: auto;
+  border: 2px solid black;
+  font-size: 3.0rem;
+  animation-duration: 2s;
+  -webkit-animation-duration: 2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+/* line 101, ../sass/jasper.scss */
+.notouch .next {
+  animation-name: 'press';
+  -webkit-animation-name: 'press';
+}
+
+/* line 105, ../sass/jasper.scss */
+.touch .next {
+  animation-name: 'swipe';
+  -webkit-animation-name: 'swipe';
+}
+
+/* line 109, ../sass/jasper.scss */
+#essay {
+  padding: 50px;
+  color: indianred;
+  background: lightblue;
+  font-size: 1.7rem;
+}
+/* line 115, ../sass/jasper.scss */
+#essay .content {
+  width: 100%;
+  max-width: 612px;
+  padding: 0 10px;
+  margin: auto;
+  box-sizing: border-box;
+  background: transparent;
+}
+/* line 125, ../sass/jasper.scss */
+#essay .content img {
+  width: 100%;
+}
+/* line 128, ../sass/jasper.scss */
+#essay .content p + p {
+  text-indent: 2em;
+  margin-top: 3em;
+}
+/* line 132, ../sass/jasper.scss */
+#essay .content p + img {
+  margin-top: 3em;
+}
+/* line 135, ../sass/jasper.scss */
+#essay .content .caption {
+  font-size: 1.0rem;
+}
+
+/* line 140, ../sass/jasper.scss */
+#essay.mobile, #essay.tablet {
+  font-size: 1.4rem;
+  padding: 30px;
+}
+
+/* line 146, ../sass/jasper.scss */
+.unset {
+  display: none;
+}
+
+/* line 149, ../sass/jasper.scss */
+.unset.content {
+  display: table;
+}
+
+/* line 152, ../sass/jasper.scss */
+.slide.text.visible {
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,111 @@
+/* line 3, ../sass/powerppt.min.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 7, ../sass/powerppt.min.scss */
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* line 14, ../sass/powerppt.min.scss */
+.slide {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+/* line 23, ../sass/powerppt.min.scss */
+.slide .content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  position: relative;
+  display: table;
+}
+
+/* line 32, ../sass/powerppt.min.scss */
+.visible {
+  visibility: visible;
+  z-index: 800;
+}
+
+/* Controls */
+/* line 38, ../sass/powerppt.min.scss */
+#controls {
+  width: 62px;
+  position: absolute;
+  left: 15px;
+  font-size: 14pt;
+  color: black;
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+  z-index: 1001;
+}
+
+/* line 47, ../sass/powerppt.min.scss */
+#controls * {
+  /*visibility: hidden;*/
+}
+
+/* line 50, ../sass/powerppt.min.scss */
+.up, .down {
+  height: 22px;
+  clear: both;
+  text-align: center;
+}
+
+/* line 55, ../sass/powerppt.min.scss */
+.left, .right {
+  width: 20px;
+  height: 22px;
+}
+
+/* line 59, ../sass/powerppt.min.scss */
+.left {
+  float: left;
+  text-align: left;
+}
+
+/* line 63, ../sass/powerppt.min.scss */
+.right {
+  float: right;
+  text-align: right;
+}
+
+/* line 67, ../sass/powerppt.min.scss */
+.right::after {
+  clear: both;
+  content: '';
+}
+
+/* Misc Fixes */
+/* line 74, ../sass/powerppt.min.scss */
+.slideDown {
+  z-index: 1000;
+}
+
+/* line 77, ../sass/powerppt.min.scss */
+.recent, .slide.recent, .slideLeft.recent, .slideRight.recent, .slideUp.recent, .slideDown.recent {
+  /*The most recent slide change should be on top*/
+  z-index: 1000;
+}
+
+/* line 81, ../sass/powerppt.min.scss */
+.slide.text {
+  height: auto;
+}
+
+/* line 84, ../sass/powerppt.min.scss */
+.slide.text.visible {
+  overflow-y: visible;
+}

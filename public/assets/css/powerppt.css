@@ -1,0 +1,305 @@
+/* line 1, ../sass/powerppt.scss */
+html {
+  font-size: 62.5%;
+  font-family: Georgia, Garamond, Baskerville, serif;
+  line-height: 2.6rem;
+}
+
+/* line 6, ../sass/powerppt.scss */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 10, ../sass/powerppt.scss */
+#container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: black;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* line 18, ../sass/powerppt.scss */
+.slide {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: black;
+}
+
+/* line 28, ../sass/powerppt.scss */
+.slide .content {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 1.9rem;
+  position: relative;
+  display: table;
+}
+
+/* Caption Styles */
+/* line 39, ../sass/powerppt.scss */
+.content .caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 2;
+}
+
+/* line 48, ../sass/powerppt.scss */
+.caption.gradient {
+  bottom: 0;
+  padding: 4% 0 2% 0;
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+  /* IE6-9 */
+  color: white;
+}
+
+/* line 63, ../sass/powerppt.scss */
+.caption.whiteGradient {
+  bottom: 0;
+  padding: 4% 0 2% 0;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0.65)));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.65) 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFFFF', endColorstr='#a6FFFFFF',GradientType=0 );
+  /* IE6-9 */
+  color: black;
+}
+
+/* line 77, ../sass/powerppt.scss */
+.caption.block {
+  background: whitesmoke;
+}
+
+/* line 80, ../sass/powerppt.scss */
+.caption.block.black {
+  background: black;
+  color: white;
+}
+
+/* Centered Text options (not captions) */
+/* line 87, ../sass/powerppt.scss */
+.slide:not(.text) > .content > p, .slide:not(.text) > .content > .text, .slide:not(.text) > .content > h1, .slide:not(.text) > .content > h2, .slide:not(.text) > .content > h3, .slide:not(.text) > .content > h4, .slide:not(.text) > .content > h5, .slide:not(.text) > .content > h6 {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0 25%;
+}
+
+/* Text styles for captions and not */
+/* line 95, ../sass/powerppt.scss */
+.black {
+  color: black;
+}
+
+/* line 96, ../sass/powerppt.scss */
+.white {
+  color: white;
+}
+
+/* line 97, ../sass/powerppt.scss */
+.yellow {
+  color: yellow;
+}
+
+/* line 98, ../sass/powerppt.scss */
+.outline, .black.outline {
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+}
+
+/* line 101, ../sass/powerppt.scss */
+.white.outline, .yellow.outline {
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+
+/* line 104, ../sass/powerppt.scss */
+.yellowOutline {
+  text-shadow: 1px 0 0 yellow, 0 -1px 0 yellow, 0 1px 0 yellow, -1px 0 0 yellow;
+}
+
+/* line 107, ../sass/powerppt.scss */
+.shadow {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+/* line 110, ../sass/powerppt.scss */
+.shadow.outline {
+  text-shadow: 1px 0 0 white, 0 -1px 0 white, 0 1px 0 white, -1px 0 0 white, 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* line 113, ../sass/powerppt.scss */
+.white.outline.shadow, .yellow.outline.shadow {
+  text-shadow: 1px 0 0 black, 0 -1px 0 black, 0 1px 0 black, -1px 0 0 black, 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* line 116, ../sass/powerppt.scss */
+.slide.white {
+  background: white;
+  color: black;
+}
+
+/* Loader */
+/* line 122, ../sass/powerppt.scss */
+.loader {
+  width: 90px;
+  height: 40px;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  margin-left: -30px;
+  padding-top: 12px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-align: center;
+  font-size: 1.0rem;
+  font-style: italic;
+  z-index: 2000;
+}
+
+/* Image fitting styles */
+/* line 140, ../sass/powerppt.scss */
+.content {
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+}
+
+/* line 145, ../sass/powerppt.scss */
+.stretch, .contain {
+  background-size: contain;
+}
+
+/* line 148, ../sass/powerppt.scss */
+.fill, .cover {
+  background-size: cover;
+}
+
+/* line 152, ../sass/powerppt.scss */
+.visible {
+  visibility: visible;
+  z-index: 800;
+}
+
+/* Text slides */
+/* line 158, ../sass/powerppt.scss */
+.slide.text {
+  background: whitesmoke;
+  height: auto;
+}
+
+/* line 162, ../sass/powerppt.scss */
+.slide.text.visible {
+  overflow-y: visible;
+}
+
+/* line 165, ../sass/powerppt.scss */
+.slide.text > .content {
+  width: 50%;
+  max-width: 700px;
+  margin: auto;
+  padding-top: 5%;
+  text-align: left;
+}
+
+/* line 175, ../sass/powerppt.scss */
+.slide.text > .content p + p, .slide.text > .content img + p, .slide.text > .content p + img,
+.slide.text > .content p + h1, .slide.text > .content h1 + p,
+.slide.text > .content p + h2, .slide.text > .content h2 + p,
+.slide.text > .content p + h3, .slide.text > .content h3 + p {
+  margin-top: 2.4rem;
+}
+
+/* line 178, ../sass/powerppt.scss */
+.slide.text > .content p + p {
+  text-indent: 5rem;
+}
+
+/* Controls */
+/* line 183, ../sass/powerppt.scss */
+#controls {
+  width: 62px;
+  position: absolute;
+  left: 15px;
+  font-size: 14pt;
+  color: black;
+  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+  z-index: 1001;
+}
+
+/* line 192, ../sass/powerppt.scss */
+#controls * {
+  /*visibility: hidden;*/
+}
+
+/* line 195, ../sass/powerppt.scss */
+.up, .down {
+  height: 22px;
+  clear: both;
+  text-align: center;
+}
+
+/* line 200, ../sass/powerppt.scss */
+.left, .right {
+  width: 20px;
+  height: 22px;
+}
+
+/* line 204, ../sass/powerppt.scss */
+.left {
+  float: left;
+  text-align: left;
+}
+
+/* line 208, ../sass/powerppt.scss */
+.right {
+  float: right;
+  text-align: right;
+}
+
+/* line 212, ../sass/powerppt.scss */
+.right::after {
+  clear: both;
+  content: '';
+}
+
+/* Misc Fixes */
+/* line 219, ../sass/powerppt.scss */
+.slideDown {
+  z-index: 1000;
+}
+
+/* line 222, ../sass/powerppt.scss */
+.recent, .slide.recent, .slideLeft.recent, .slideRight.recent, .slideUp.recent, .slideDown.recent {
+  /*The most recent slide change should be on top*/
+  z-index: 1000;
+}
