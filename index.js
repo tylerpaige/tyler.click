@@ -5,7 +5,6 @@ var handlers = require('./handlers');
 
 //Template config
 app.set('views', './views');
-app.set('view engine', 'jade');
 
 //The public folder is available for all routes
 app.use(express.static(__dirname + '/public'))
@@ -16,10 +15,10 @@ for(var i = 0; i < routes.length; i++) {
   if(cur.dir != undefined) {
   //Routes with a 'dir' property serve static files
   //for now, these static files are in /lib/components
-    app.use(cur.url, express.static(__dirname + '/lib/components' + cur.dir))
+    app.use(cur.path, express.static(__dirname + '/static' + cur.dir))
   } else if(cur.svc != undefined) {
   //Routes with a 'svc' property have their own services
-    app.get(cur.url, handlers[cur.svc]);
+    app[cur.method](cur.path, handlers[cur.svc])
   }
 }
 

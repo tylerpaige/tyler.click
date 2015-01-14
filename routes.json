@@ -1,14 +1,22 @@
 [
   {
-    "url" : "/oneforthepriceoftwo",
-    "dir" : "/jasper"
+    "method" : "get",
+    "path"   : "/oneforthepriceoftwo",
+    "dir"    : "/jasper"
   },
   {
-    "url" : "/imagine",
-    "dir" : "/imagine"
+    "method" : "get",
+    "path"   : "/imagine",
+    "dir"    : "/imagine"
   },
   {
-    "url" : "/beep",
-    "dir" : "/beep"
+    "method" : "get",
+    "path"   : "/beep",
+    "dir"    : "/beep"
+  },
+  {
+    "method" : "get",
+    "path"   : "/test",
+    "svc"    : "imagine"
   }
 ]
