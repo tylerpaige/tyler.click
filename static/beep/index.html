@@ -52,11 +52,15 @@ $(function() {
 
 		return m;
 	}
-	function changeColor(yPos){
+	function changeColor(yPos) {
 		var height 	= $(window).height();
 		var yPer		= Math.round(yPos / wHeight * 100)
 		var color 	= mixColor(topColor, bottomColor, yPer);
 		$('body').css('background-color', color.rgb)
+	}
+	function resetColors() {
+		topColor = randomColor();
+		bottomColor = randomColor();
 	}
 	function changeFrequency(yPos) {
 		osc.frequency.value = yPos / wHeight * 1000;
@@ -71,6 +75,8 @@ $(function() {
 		changeColor(yPos);
 	}).on('resize', function() {
 		wHeight = $(window).height();
+	}).click(function() {
+		resetColors();
 	});
 
 
