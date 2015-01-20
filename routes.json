@@ -24,5 +24,10 @@
     "method" : "get",
     "path"   : "/greencamp",
     "dir"    : "greencamp"
+  },
+  {
+    "method" : "get",
+    "path"   : "/findyourtopic",
+    "dir"    : "nav"
   }
 ]
