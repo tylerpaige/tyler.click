@@ -19,5 +19,10 @@
     "method" : "get",
     "path"   : "/beep",
     "dir"    : "beep"
+  },
+  {
+    "method" : "get",
+    "path"   : "/greencamp",
+    "dir"    : "greencamp"
   }
 ]

@@ -49,3 +49,4 @@ Where `method` is the HTTP method for the request; `path` is the URL at which th
 * Also figure out where these assets should properly live. Is it just in public/assets?
 * The above is especially important for the new index template, which is incredibly complex right now
 * Make index work responsively (meaning update powerppt)
+* in fact, powerppt really needs to be cleaned up
