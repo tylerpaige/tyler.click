@@ -23,7 +23,7 @@ html
         text-align: center;
       }
       .slide{
-        background: whitesmoke
+        background: whitesmoke;
       }
       #toc{
         background: #262262;
@@ -71,6 +71,7 @@ html
         position: absolute;
         left: 20px;
         margin-top: 7px;
+        cursor: pointer;
         color: rgb(85, 26, 139);
         border: 2px solid rgb(85, 26, 139);
         font-size: 3.0rem;
@@ -83,6 +84,16 @@ html
         -webkit-animation-direction: alternate;
         animation-name: 'press';
         -webkit-animation-name: 'press';
+      }
+      #pointer:before{
+        content: 'Table of Contents';
+        width: 100%;
+        display: block;
+        position: absolute;
+        left: 100%;
+        transform: rotate(-90deg);
+        font-size: 1.5rem;
+        line-height: 1.2em;
       }
       a{
         text-decoration:none;
@@ -135,6 +146,12 @@ html
           controls: true,
           origin:   '#start'
         });
+
+        $('#pointer').click(function() {
+          var e = $.Event('keydown')
+          e.keyCode = 37;
+          $(document).trigger(e);
+        })
       });
   body
     #container

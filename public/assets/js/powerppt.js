@@ -1,4 +1,6 @@
-(function($){ 
+(function($){
+    window.powerPPT;
+    
     $.fn.extend({
         powerPPT: function(options) {
             var defaults = {
@@ -8,9 +10,9 @@
                 origin: false,
                 slide: '.slide'
             }
-            
+
             var options = $.extend(defaults, options);
-            
+
             return this.each(function() {
                 var o = options,
                     transitionEnd = 'transitionend webkitTransitionEnd oTransitionEnd otransitionend animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd',
@@ -21,18 +23,18 @@
                     slides = $(this).find(slide),
                     slideClass = slide.substr(1),
                     loader = '<div class="loader"><img src="'+o.loader+'" /><br/>img loading</div>';
-                    
+
                 if(o.loader != false){ //download the loader image first
                     function loaded() { console.log('loaded the loader'); }
                     loadImg = new Image();
                     loadImg.src = o.loader;
                     loadImg.onLoad = loaded();
                 }
-                    
+
                 if(o.origin == false){ cur = $(this).find(slide).eq(0); }
                 else { cur = $(this).find(o.origin); }
                 $(cur).addClass('visible');
-                
+
                 if(o.controls==true){
                     var controlsMarkup = '<div id="controls"><div class="up">↑</div><div class="left">←</div><div class="right">→</div><div class="down">↓</div></div>';
                     $(this).prepend(controlsMarkup);
@@ -44,13 +46,13 @@
                         manageControls = function(slide) {
                             if(slide.parent().hasClass(slideClass) == false){ $(conUp).css('visibility','hidden'); }
                             else if($(conUp).css('visibility') == 'hidden') { $(conUp).css('visibility','visible'); }
-                            
+
                             if((slide.next().hasClass(slideClass) == false) && (slide.hasClass('jump') == false)){ $(conRight).css('visibility','hidden'); }
                             else if($(conRight).css('visibility') == 'hidden') { $(conRight).css('visibility','visible'); }
-                            
+
                             if(slide.prev().hasClass(slideClass) == false){ $(conLeft).css('visibility','hidden'); }
                             else if($(conLeft).css('visibility') == 'hidden') { $(conLeft).css('visibility','visible'); }
-                            
+
                             if(slide.children('.'+slideClass).length <= 0){ $(conDown).css('visibility','hidden'); }
                             else if($(conDown).css('visibility') == 'hidden') { $(conDown).css('visibility','visible'); }
                         };
@@ -72,8 +74,8 @@
                          }
                     });
                 }
-                
-                
+
+
                 $(document).keydown(function(event) {
                     switch (event.keyCode) {
                         case 27: //escape key
@@ -100,7 +102,7 @@
                             if(index > 0){
                                 target = index-1;
                                 cur = $(cur).siblings(slide).addBack().eq(target);
-                                
+
                                 $(cur).addClass('slideRight recent').one(transitionEnd, function() {
                                    $(this).addClass('visible').removeClass('slideRight recent').nextAll().removeClass('visible slideRight recent');
                                 });
@@ -120,19 +122,19 @@
                         case 39: //right arrow
                             index = $(cur).siblings(slide).addBack().index(cur);
                             if(index < $(cur).siblings(slide).length){
-                                target = index+1; 
-                                cur = $(cur).siblings(slide).addBack().eq(target);    		
-                                $(cur).addClass('slideLeft recent').one(transitionEnd, function(){ 
+                                target = index+1;
+                                cur = $(cur).siblings(slide).addBack().eq(target);
+                                $(cur).addClass('slideLeft recent').one(transitionEnd, function(){
                                     $(this).addClass('visible').removeClass('slideLeft recent').prevAll().removeClass('visible slideLeft slideRight recent');
-                                }); 
+                                });
                                 $('.recent').not(cur).removeClass('recent');
                             } else if($(cur).hasClass('jump')) {
                                 target = cur.attr('data-target');
                                 cur = $(target);
-                                $(cur).addClass('slideLeft recent').one(transitionEnd, function(){ 
+                                $(cur).addClass('slideLeft recent').one(transitionEnd, function(){
                                     $('.visible').not(cur).removeClass('visible slideLeft slideRight recent');
                                     $(this).addClass('visible').removeClass('slideLeft recent');
-                                }); 
+                                });
                                 $('.recent').not(cur).removeClass('recent');
                             }
                             break;
@@ -147,9 +149,9 @@
                     }
                     manageControls(cur);
                 });
-                 
+
                 manageControls($(cur));
-                 
+
             });
         }
     });
