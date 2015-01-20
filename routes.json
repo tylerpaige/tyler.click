@@ -1,22 +1,23 @@
 [
   {
     "method" : "get",
+    "path"   : "/",
+    "svc"    : "index",
+    "private": true
+  },
+  {
+    "method" : "get",
     "path"   : "/oneforthepriceoftwo",
-    "dir"    : "/jasper"
+    "dir"    : "jasper"
   },
   {
     "method" : "get",
     "path"   : "/imagine",
-    "dir"    : "/imagine"
+    "dir"    : "imagine"
   },
   {
     "method" : "get",
     "path"   : "/beep",
-    "dir"    : "/beep"
-  },
-  {
-    "method" : "get",
-    "path"   : "/test",
-    "svc"    : "imagine"
+    "dir"    : "beep"
   }
 ]
