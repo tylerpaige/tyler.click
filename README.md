@@ -20,7 +20,7 @@ tyler.click
 Where `method` is the HTTP method for the request; `path` is the URL at which the project will be online; and `dir` is the name of the directory in `/static/` where the files live.
 
 ## Deploying More Complex Things
-* Create a service js file within `/lib/svc`. It does not matter which type of HTTP request the service will respond to—this will be specified later. You need only create the response function. 
+* Create a service js file within `/lib/svc`. It does not matter which type of HTTP request the service will respond to—this will be specified later. You need only create the response function.
 * Be sure to export the function. You may end up with something like this:
 
 ```js
@@ -42,9 +42,10 @@ exports.handler = handler;
 }
 ```
 
-Where `method` is the HTTP method for the request; `path` is the URL at which the project will be online; and `svc` is the name of the js file in `/lib/svc`. Note that dynamic URLs do not use the property `dir` like static projects do. 
+Where `method` is the HTTP method for the request; `path` is the URL at which the project will be online; and `svc` is the name of the js file in `/lib/svc`. Note that dynamic URLs do not use the property `dir` like static projects do.
 
 ## To Do
 * Add configuration so assets can be placed in routes.json
 * Also figure out where these assets should properly live. Is it just in public/assets?
-* test templating
+* The above is especially important for the new index template, which is incredibly complex right now
+* Make index work responsively (meaning update powerppt)
