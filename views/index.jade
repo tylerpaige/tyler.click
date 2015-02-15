@@ -76,14 +76,18 @@ html
         border: 2px solid rgb(85, 26, 139);
         font-size: 3.0rem;
         line-height: 2.7rem;
-        animation-duration: 1s;
+        animation-duration: .75s;
         -webkit-animation-duration: .75s;
+        -moz-animation-duration: .75s;
         animation-iteration-count: infinite;
         -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
         animation-direction: alternate;
         -webkit-animation-direction: alternate;
-        animation-name: 'press';
-        -webkit-animation-name: 'press';
+        -moz-animation-direction: alternate;
+        animation-name: press;
+        -webkit-animation-name: press;
+        -moz-animation-name: press;
       }
       #pointer:before{
         content: 'Table of Contents';
@@ -99,7 +103,24 @@ html
         text-decoration:none;
       }
 
-      @keyframes 'press' {
+      @keyframes press {
+        0% {
+          transform: translate(-7px, 7px);
+          -moz-transform: translate(-7px, 7px);
+          -ms-transform: translate(-7px, 7px);
+          -webkit-transform: translate(-7px, 7px);
+          box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
+        }
+        100% {
+          transform: translate(0px, 0px);
+          -moz-transform: translate(0px, 0px);
+          -ms-transform: translate(0px, 0px);
+          -webkit-transform: translate(0px, 0px);
+          box-shadow: -7px 7px 15px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      @-moz-keyframes press {
         0% {
           transform: translate(-7px, 7px);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
@@ -110,7 +131,7 @@ html
         }
       }
 
-      @-webkit-keyframes 'press' {
+      @-webkit-keyframes press {
         0% {
           -webkit-transform: translate(-7px, 7px);
           box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.75);
