@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title></title>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function count(tgt, int){
+    tgt.innerHTML = int;
+    window.setTimeout(function(){
+      count(tgt, int+1);
+    }, 1000);
+  };
+
+  var tgt = document.getElementById('tgt');
+  tgt.addEventListener('click', function(){
+    count(tgt, 0)
+  }, false);
+
+});
+</script>
+<style>
+  body{
+    background: mediumaquamarine;
+    color: #333;
+  }
+  #tgt{
+    text-align: center;
+    font-size: 46pt;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    padding-top: 40vh;
+  }
+</style>
+</head>
+<body>
+  <div id="tgt">
+    Start
+  </div>
+</body>
+</html>

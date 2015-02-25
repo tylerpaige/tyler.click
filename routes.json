@@ -29,5 +29,10 @@
     "method" : "get",
     "path"   : "/findyourtopic",
     "dir"    : "nav"
+  },
+  {
+    "method" : "get",
+    "path"   : "/timer",
+    "dir"    : "unixtimer"
   }
 ]
