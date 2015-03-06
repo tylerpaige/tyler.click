@@ -15,8 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   var tgt = document.getElementById('tgt');
+  var timers = document.getElementsByClassName('timer');
   tgt.addEventListener('click', function(){
     count(tgt, 0)
+    for(var i = 0; i < timers.length; i++) {
+      console.log(timers[i]);
+      count(timers[i], 0);
+    }
   }, false);
 
 });
@@ -57,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
     <p>Start counting, on my ready, the number of seconds that have elapsed since 2:45 on February 25, 2015. Starting now.</p>
     <p>Unix time refers to the number of seconds that have elapsed since midnight on January 1, 1970, coordinated universal time.</p>
     <p>Stay counting.</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
     <p>Unix time is used in programming to evaluate an order of events. It is not a standard for time like a 12- or 24-hour clock. Its only concerns are which events happened first, and how many seconds (arguably the only timescale humans have an understanding of) passed in-between the events. </p>
     <p>Stay counting.</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
     <p>Imagine a conception of time that does offer the myth of understanding a specific moment.</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
 
     <p>If we adopted it now, we would have to rewrite the history textbooks to show time-ranges of events. </p>
     <p>The Shot Heard ‘Round the World happened some time between negative 6 billion, 144 million, 249 thousand, 599</p>
@@ -70,13 +75,13 @@ document.addEventListener('DOMContentLoaded', function () {
     <p>and </p>
     <p>negative 6 billion, 144 million, 163 thousand, 201</p>
     <p>Stay counting</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
     <p>Would we not have an understanding of history more accepting of ambiguities?</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
     <p>At 6:28 and 16 seconds (coordinated universal time) on February 7th, 2036, Unix time will reach the programmatic limits of a 32-bit number. At this moment (Unix time: 2 billion, 147 million, 483 thousand, 647), Unix time will reset into the next Unix Epoch.</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
     <p>If I never know when it is 5 o’clock, I never have to stop working.</p>
-    <p>&#1421;</p>
+    <p class="timer">&nbsp;</p>
   </div>
 </body>
 </html>
