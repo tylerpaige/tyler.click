@@ -6,21 +6,37 @@
 <title></title>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  //selectors
+  var timer = document.getElementById('timer'),
+      sTimers = document.getElementsByClassName('timer'),
+      sTLength = sTimers.length;
+  //utility vars
+  var on = false,
+      record = 0;
+  var counters = [];
 
-  function count(tgt, int){
-    tgt.innerHTML = int;
-    window.setTimeout(function(){
-      count(tgt, int+1);
+  function count(elm, int) {
+    elm.innerHTML = int;
+    int++;
+    var counter = window.setTimeout(function() {
+      count(elm, int);
     }, 1000);
-  };
+    counters.push(counter);
+    return int;
+  }
 
-  var tgt = document.getElementById('tgt');
-  var timers = document.getElementsByClassName('timer');
-  tgt.addEventListener('click', function(){
-    count(tgt, 0)
-    for(var i = 0; i < timers.length; i++) {
-      console.log(timers[i]);
-      count(timers[i], 0);
+  //Event listeners
+  timer.addEventListener('click', function(){
+    on = !on;
+    if(on) {
+      for(var i = 0; i < sTLength; i++) {
+        count(sTimers[i], record);
+      }
+      record = count(timer, record);//comes last so we only have to update record once
+    } else {
+      for(var i = 0; i < counters.length; i++) {
+        window.clearTimeout(counters[i]);
+      }
     }
   }, false);
 
@@ -32,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     color: #333;
     margin: 0 8px;
   }
-  #tgt{
+  #timer{
     background: mediumaquamarine;
     text-align: center;
     font-size: 10vh;
@@ -55,21 +71,24 @@ document.addEventListener('DOMContentLoaded', function () {
 </style>
 </head>
 <body>
-  <div id="tgt">
+  <div id="timer">
     Start
   </div>
   <div id="script">
-    <p>Start counting, on my ready, the number of seconds that have elapsed since 2:45 on February 25, 2015. Starting now.</p>
-    <p>Unix time refers to the number of seconds that have elapsed since midnight on January 1, 1970, coordinated universal time.</p>
+    <p>Start counting, on my ready, the number of seconds that have elapsed since 4:55 PM on Friday, March 13, 2015, Eastern Standard Time... Starting... now.</p>
+    <p>Unix Time refers to the number of seconds that have elapsed since midnight on Thursday, January 1, 1970, coordinated universal time.</p>
     <p>Stay counting.</p>
     <p class="timer">&nbsp;</p>
-    <p>Unix time is used in programming to evaluate an order of events. It is not a standard for time like a 12- or 24-hour clock. Its only concerns are which events happened first, and how many seconds (arguably the only timescale humans have an understanding of) passed in-between the events. </p>
+    <p>Unix time is used in programming to evaluate an order of events. It is not a standard for time like a 12-hour or a 24-hour clock.</p>
+    <p>Its only concerns are for which events happened first, and how many seconds passed in-between events. </p>
+    <p>Seconds being the only timescale humans have an understanding of.</p>
     <p>Stay counting.</p>
     <p class="timer">&nbsp;</p>
-    <p>Imagine a conception of time that does offer the myth of understanding a specific moment.</p>
+    <p>Imagine a conception of time that does not offer the myth of understanding a specific moment</p>
+    <p>One that does not attempt to synchronize individuals, but rather lets events happen in their own duration</p>
     <p class="timer">&nbsp;</p>
 
-    <p>If we adopted it now, we would have to rewrite the history textbooks to show time-ranges of events. </p>
+    <p>If we adopted it now, we would have to rewrite the books to show time-ranges</p>
     <p>The Shot Heard ‘Round the World happened some time between negative 6 billion, 144 million, 249 thousand, 599</p>
 
     <p>and </p>
@@ -78,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <p class="timer">&nbsp;</p>
     <p>Would we not have an understanding of history more accepting of ambiguities?</p>
     <p class="timer">&nbsp;</p>
-    <p>At 6:28 and 16 seconds (coordinated universal time) on February 7th, 2036, Unix time will reach the programmatic limits of a 32-bit number. At this moment (Unix time: 2 billion, 147 million, 483 thousand, 647), Unix time will reset into the next Unix Epoch.</p>
+    <p>At 6:28 AM and 16 seconds, coordinated universal time, on Thursday, February 7, 2036, Unix time will reach the programmatic limits of a 32-bit number. </p>
+    <p>At this moment (Unix time: 2 billion, 147 million, 483 thousand, 647), Unix time will reset into the next Unix Epoch.</p>
     <p class="timer">&nbsp;</p>
     <p>If I never know when it is 5 o’clock, I never have to stop working.</p>
     <p class="timer">&nbsp;</p>
